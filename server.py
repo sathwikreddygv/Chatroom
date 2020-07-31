@@ -24,7 +24,7 @@ print(f'Listen for connections on {IP}:{PORT}...')
 #This function handles message receiving
 def receive_msg(client_socket):
 	try:
-		message_header = clients.recv(MAX_LENGTH) #read the header
+		message_header = client_socket.recv(MAX_LENGTH) #read the header
 
 		if not len(message_header): #when a client closes connection
 			return False
