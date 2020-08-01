@@ -67,9 +67,9 @@ while True:
     		print(f"Received message from {user['data'].decode('utf-8')}: {message['data'].decode('utf-8')}")
 
     		for client_socket in clients: # send the above message to the remaining clients
-    		    if client_socket != notified_socket: #exclude the client which sent the msg
+    		    #if client_socket != notified_socket: #exclude the client which sent the msg
     		        #sending both user header and data from clients dict. Message header and data which we received just now
-    		    	client_socket.send(user['header'] + user['data'] + message['header'] + message['data'])
+    		    client_socket.send(user['header'] + user['data'] + message['header'] + message['data'])
 
 
     # handle some socket exceptions
